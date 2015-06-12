@@ -32,27 +32,31 @@ public class MainActivity extends Activity {
                 mTextView = (TextView) stub.findViewById(R.id.text);
             }
         });
-        Aware.setSetting(this, Aware_Preferences.DEBUG_FLAG, true);
+
+        Intent intent = new Intent(this, DetectorService.class);
+        startService(intent);
+        Aware.startPlugin(this, "com.aware.plugin.android.wear");
+//        Aware.setSetting(this, Aware_Preferences.DEBUG_FLAG, true);
 
 
 
 
-        Aware.setSetting(this, Aware_Preferences.STATUS_ACCELEROMETER, true);
-        Aware.setSetting(this,Aware_Preferences.FREQUENCY_ACCELEROMETER,20000);
-
-        Aware.setSetting(this, Aware_Preferences.STATUS_GYROSCOPE, true);
-        Aware.setSetting(this,Aware_Preferences.FREQUENCY_GYROSCOPE,20000);
-
-        Aware.setSetting(this, Aware_Preferences.STATUS_MAGNETOMETER, true);
-        Aware.setSetting(this,Aware_Preferences.FREQUENCY_MAGNETOMETER,20000);
-
-        Aware.setSetting(this,"study_id",371);
-        Aware.setSetting(this, Aware_Preferences.STATUS_WEBSERVICE,true);
-        Aware.setSetting(this, Aware_Preferences.WEBSERVICE_SERVER,"https://api.awareframework.com/index.php/webservice/index/371/lh2omoZ7IgUo");
-        Aware.setSetting(this, Aware_Preferences.FREQUENCY_WEBSERVICE, 5);
-        Aware.setSetting(this, "study_start", System.currentTimeMillis());
-
-        sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
+//        Aware.setSetting(this, Aware_Preferences.STATUS_ACCELEROMETER, true);
+//        Aware.setSetting(this,Aware_Preferences.FREQUENCY_ACCELEROMETER,20000);
+//
+//        Aware.setSetting(this, Aware_Preferences.STATUS_GYROSCOPE, true);
+//        Aware.setSetting(this,Aware_Preferences.FREQUENCY_GYROSCOPE,20000);
+//
+//        Aware.setSetting(this, Aware_Preferences.STATUS_MAGNETOMETER, true);
+//        Aware.setSetting(this,Aware_Preferences.FREQUENCY_MAGNETOMETER,20000);
+//
+//        Aware.setSetting(this,"study_id",371);
+//        Aware.setSetting(this, Aware_Preferences.STATUS_WEBSERVICE,true);
+//        Aware.setSetting(this, Aware_Preferences.WEBSERVICE_SERVER,"https://api.awareframework.com/index.php/webservice/index/371/lh2omoZ7IgUo");
+//        Aware.setSetting(this, Aware_Preferences.FREQUENCY_WEBSERVICE, 5);
+//        Aware.setSetting(this, "study_start", System.currentTimeMillis());
+//
+//        sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
         //TODO: processing of data on the watch and creating DB with just timestamps when smoked with probability.
 
 
