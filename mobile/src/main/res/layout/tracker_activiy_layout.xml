@@ -1,21 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Smoking Detector"
-        android:textSize="30sp"/>
+    <!-- title bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".05"
+        android:layout_height="30sp"
+        android:layout_marginBottom="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center_vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_start_stop"
-        android:textSize="20sp"
-        />
+        <ImageView
+            android:layout_height="fill_parent"
+            android:src="@drawable/cigarette"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+             />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Smoking Tracker"
+            android:textSize="20sp"
+            android:textColor="@color/darkBlue"
+            android:textStyle="bold"
+            android:layout_weight=".6"
+
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight=".1"
+            android:layout_gravity="right"
+            android:src="@android:drawable/ic_menu_more" />
+    </LinearLayout>
+
+    <!-- First Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".3"
+        android:layout_marginBottom="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <!-- blue box -->
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/lightBlue"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <ImageView
+                android:layout_height="100dp"
+                android:layout_width="fill_parent"
+                android:src="@drawable/camilo"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:background="@color/darkBlue"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:background="@color/darkBlue"
+                    android:orientation="horizontal"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="12"
+                        android:id="@+id/dayLabel"
+                        android:textColor="#fff"
+                        android:gravity="center_vertical"
+                        android:textSize="40sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:background="@color/darkBlue"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical">
+
+                            <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="June"
+                            android:id="@+id/monthLabel"
+                            android:textColor="#fff"/>
+                            <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2015"
+                            android:id="@+id/yearLabel"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- table -->
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#333"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <TableRow
+                    android:background="#fff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0.2"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:text="Cigarettes today"
+                        android:layout_weight=".8"/>
+                    <TextView
+                        android:text="0"
+                        android:layout_weight=".2"
+                        android:id="@+id/todaySmoke"
+                        android:gravity="right"
+                        android:textColor="@color/darkBlue"/>
+                </TableRow>
+                <TableRow
+                    android:background="#fff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0.2"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:text="Your average"
+                        android:layout_weight=".8"
+                        />
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/averageSmoke"
+                        android:gravity="right"
+                        android:layout_weight=".2"
+                        android:textColor="@color/darkBlue"/>
+                </TableRow>
+                <TableRow
+                    android:background="#fff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:text="Money spent"
+                        android:layout_weight=".8"
+                        android:gravity="center_vertical" />
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/moneySpent"
+                        android:gravity="right"
+                        android:layout_weight=".2"
+                        android:textColor="@color/darkBlue"/>
+                </TableRow>
+                <TableRow
+                    android:background="#fff"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:text="Time since last smoke"
+                        android:layout_weight=".8"/>
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/timeSinceLastSmoke"
+                        android:layout_weight=".2"
+                        android:gravity="right"
+                        android:textColor="@color/darkBlue"
+                       />
+                </TableRow>
+            </TableLayout>
+
+
+    </LinearLayout>
+
+    <!-- Second Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".15"
+        android:layout_marginBottom="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <!-- red box -->
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/lightGreen"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_height="50dp"
+                android:layout_width="fill_parent"
+                android:src="@drawable/calendar" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="today"
+                android:textColor="#fff"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+        <com.db.chart.view.BarChartView
+            xmlns:chart="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/daychart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            />
+
+    </LinearLayout>
+
+    <!-- Third Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".15"
+        android:layout_marginBottom="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <!-- yellow box -->
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/darkYellow"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_height="50dp"
+                android:layout_width="fill_parent"
+                android:src="@drawable/calendar" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="June"
+                android:textColor="#fff"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <com.db.chart.view.BarChartView
+            xmlns:chart="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/monthchart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <!-- Fourth Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".15"
+        android:layout_marginBottom="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <!-- green box -->
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/lightRed"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:src="@drawable/clock"
+                android:layout_height="50dp" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="2015"
+                android:textColor="#fff"
+                android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
+        <com.db.chart.view.BarChartView
+            xmlns:chart="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/yearchart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <!-- commercial bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".1"
+        android:background="@color/darkBlue"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/lightBlue"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_height="50dp"
+                android:layout_width="fill_parent"
+                android:src="@drawable/group" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="UBI Summer School 2015"
+            android:textColor="#fff"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Workshop A - Group#3"
+            android:textColor="#fff"
+            android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>
