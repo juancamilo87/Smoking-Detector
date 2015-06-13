@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Smoking-Detector.iml" filepath="$PROJECT_DIR$/Smoking-Detector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmokingRecognition.iml" filepath="$PROJECT_DIR$/SmokingRecognition.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/wear/wear.iml" filepath="$PROJECT_DIR$/wear/wear.iml" />
       <module fileurl="file://$PROJECT_DIR$/william-chart/william-chart.iml" filepath="$PROJECT_DIR$/william-chart/william-chart.iml" />

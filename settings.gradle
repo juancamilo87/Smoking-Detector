@@ -1,1 +1,1 @@
-include ':mobile', ':wear', ':william-chart'
+include ':william-chart', ':mobile', ':wear'
