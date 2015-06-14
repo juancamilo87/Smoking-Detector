@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aware.Accelerometer;
@@ -20,6 +21,7 @@ import com.aware.providers.Aware_Provider;
 public class MainActivity extends Activity {
 
     private TextView mTextView;
+    private ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,8 @@ public class MainActivity extends Activity {
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
-                mTextView = (TextView) stub.findViewById(R.id.text);
+                mImageView= (ImageView) stub.findViewById(R.id.image);
+                //mTextView = (TextView) stub.findViewById(R.id.text);
             }
         });
 
@@ -38,6 +41,9 @@ public class MainActivity extends Activity {
         Aware.startPlugin(this, "com.aware.plugin.android.wear");
 //        Aware.setSetting(this, Aware_Preferences.DEBUG_FLAG, true);
 
+        private void vanish(){
+            this.finish();
+        }
 
 
 

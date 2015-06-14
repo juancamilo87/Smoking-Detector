@@ -12,7 +12,7 @@
         tools:replace="android:icon, android:theme">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".TrackerActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +35,11 @@
             android:authorities="fi.ubiss2015.smokingrecognition.provider.general_data"
             android:enabled="true"
             android:exported="true"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
 
     </application>
 
